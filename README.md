@@ -11,59 +11,65 @@ Converts raw plate reader CSV exports into clean time-series files ready for dow
 
 ---
 
-## Getting started
+## Download
 
-1. Download `amyloconverter.py` and place it in a folder of your choice
-2. Open a terminal in that folder
-3. Run the command below with your data folder name — setup starts automatically on first run:
+1. Go to the repository on GitHub
+2. Click the green **Code** button → **Download ZIP**
+3. Unzip it anywhere on your computer
 
+Or if you have git installed:
 ```
-python amyloconverter.py <folder_name>
+git clone https://github.com/LeoSprr/Convert-file-to-amylofit-format.git
 ```
-
-Setup asks two questions and saves your answers to `settings.json` next to the script. You will not be asked again unless you run `--setup`.
 
 ---
 
-## Usage
+## Getting started
+
+### GUI (recommended)
+
+Double-click `amyloconverter_gui.py`, or run:
+```
+python amyloconverter_gui.py
+```
+
+On first launch the Settings window opens automatically. Configure your plate reader and preferences, then:
+
+1. Click **Add Files** to select individual CSV files, or **Add Folder** to load all CSVs from a folder
+2. Make sure files are listed in the correct merge order (see note below)
+3. Click **Convert**
+4. Output files are saved to the same folder as your input files — the log shows the exact path
+
+### Command line
 
 ```
 python amyloconverter.py <folder_name>
 ```
 
-`folder_name` is the name of a folder **in the parent directory** of wherever `amyloconverter.py` lives, containing your raw `.csv` files.
+`folder_name` is the name of a folder **in the parent directory** of wherever `amyloconverter.py` lives, containing your raw `.csv` files. Setup runs automatically on first use.
 
-**Example — if your folder structure looks like this:**
-```
-lab/
-├── Amyloconert/
-│   └── amyloconverter.py
-└── my_experiment/
-    ├── run1.csv
-    └── run2.csv
-```
+---
 
-Run from inside `Amyloconert/`:
-```
-python amyloconverter.py my_experiment
-```
+## File order
 
-Output `.txt` files are written into the data folder.
+When merging multiple files, AmyloConverter processes them in alphabetical order. To ensure correct results:
+
+- Name your files `part1.csv`, `part2.csv` ... or `run1.csv`, `run2.csv` ...
+- Or add them manually in the correct sequence using **Add Files**
 
 ---
 
 ## Settings
 
-On first run, `settings.json` is created automatically next to the script. It stores your preferences so you are not asked every time.
+Settings are saved to `settings.json` next to the script on first run. You will not be asked again unless you click **Settings** in the GUI or run:
 
-To redo setup at any time:
 ```
 python amyloconverter.py --setup
 ```
 
-See `settings.example.json` in this repo for a full description of every available setting and its valid values.
+See `settings.example.json` for a description of every available option.
 
-`settings.json` is excluded from version control via `.gitignore` — your personal settings will never be overwritten by a repo update.
+`settings.json` is personal and excluded from version control — it will never be overwritten by a repo update.
 
 ---
 
