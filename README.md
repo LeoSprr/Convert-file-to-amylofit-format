@@ -11,20 +11,23 @@ Converts raw plate reader CSV exports into clean time-series files ready for dow
 
 ---
 
-## Download
+## Download and launch
 
 1. Go to the repository on GitHub
 2. Click the green **Code** button → **Download ZIP**
 3. Unzip it anywhere on your computer
-4. Open Terminal, navigate to the folder, and run this once:
+4. Open **Terminal** (search for it in Spotlight with `Cmd+Space`)
+5. Type `cd ` (with a space), then drag the unzipped folder into the Terminal window and press **Enter**
+6. Run:
    ```
-   chmod +x AmyloConverter.command
+   python3 amyloconverter_gui.py
    ```
-5. From now on, double-click **AmyloConverter.command** to launch
 
 Or if you have git installed:
 ```
 git clone https://github.com/LeoSprr/Convert-file-to-amylofit-format.git
+cd Convert-file-to-amylofit-format
+python3 amyloconverter_gui.py
 ```
 
 ---
@@ -33,7 +36,7 @@ git clone https://github.com/LeoSprr/Convert-file-to-amylofit-format.git
 
 ### GUI (recommended)
 
-Double-click `AmyloConverter.command`, or run:
+Run from Terminal inside the project folder:
 ```
 python3 amyloconverter_gui.py
 ```
