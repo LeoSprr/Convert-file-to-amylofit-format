@@ -1,0 +1,15 @@
+{
+  "_readme": "Run amyloconverter.py and setup will guide you automatically. Or copy this file to settings.json and fill in your values.",
+
+  "plate_reader": "fluostar",
+  "_plate_reader": "Options: 'fluostar' (FLUOstar Omega) | 'auto' (universal auto-detect for other readers)",
+
+  "roof_mode": "fixed",
+  "_roof_mode": "Options: 'fixed' (use the roof_value below) | 'auto' (detect ceiling from data each run)",
+
+  "roof_value": 260000,
+  "_roof_value": "Only used when roof_mode is 'fixed'. FLUOstar Omega default is 260000.",
+
+  "chromatic_mode": "auto",
+  "_chromatic_mode": "Options: 'auto' (script picks the best chromatic) | 'manual' (you choose from a table each run)"
+}
