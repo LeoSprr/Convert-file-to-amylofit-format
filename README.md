@@ -17,7 +17,13 @@ Converts raw plate reader CSV exports into clean time-series files ready for dow
 2. Click the green **Code** button → **Download ZIP**
 3. Unzip it anywhere on your computer
 4. Open **Terminal** (search for it in Spotlight with `Cmd+Space`)
-5. Type `cd ` (with a space), then drag the unzipped folder into the Terminal window and press **Enter**
+5. Navigate into the unzipped folder by running:
+ 
+```
+cd ~/Downloads/Convert-file-to-amylofit-format-main
+```
+ 
+> If you saved the ZIP somewhere other than Downloads, replace `~/Downloads` with the actual path. You can also type `cd ` (with a trailing space) and then drag the unzipped folder into the Terminal window, then press **Enter**.
 6. Run:
    ```
    python3 amyloconverter_gui.py
